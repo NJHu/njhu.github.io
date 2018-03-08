@@ -1,2 +1,1 @@
-# njhu.github.io
-github person blog
+#[个人博客](https://njhu.github.io)
