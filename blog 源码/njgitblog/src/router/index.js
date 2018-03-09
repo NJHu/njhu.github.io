@@ -4,7 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'hash',
+  mode: 'history',
   routes: [
     {
       path: '*',
@@ -12,22 +12,8 @@ const router = new Router({
     },
     {
       path: '/',
-      redirect: '/home'
-    },
-    {
-      path: '/home',
-      // name: 'home',
       component: () => import('../pages/Home'),
       children: [
-        {
-          path: '/',
-          name: 'home',
-          components: {
-            // default 占位用
-            default: () => import('../pages/Home'),
-            poscontent: () => import('../components/Pos')
-          }
-        }
       ]
     }
   ]
@@ -40,7 +26,9 @@ router.beforeEach((to, from, next) => {
   // console.log(to)
   // console.log('from ======')
   // console.log(from)
-  document.title = to.name
+  if (to.name) {
+    document.title = to.name
+  }
   // to.meta.title = to.name
   next()
 })

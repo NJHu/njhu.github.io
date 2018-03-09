@@ -1,10 +1,6 @@
 <template>
   <div class="error-wrapper">
     <p>{{msg}}</p>
-
-    <button @click="goback">goback返回</button>
-    <button @click="goHome">push首页</button>
-    <button @click="replaceHome">replace首页</button>
   </div>
 </template>
 

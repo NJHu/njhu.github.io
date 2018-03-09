@@ -12,6 +12,6 @@ export default {
 
 <style>
 #app-window {
-  background-color: red;
+  background-color: #f6f6f6;
 }
 </style>
