@@ -5,6 +5,10 @@ html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, l
   padding: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 fieldset, img, input, button { 			/*fieldset组合表单中的相关元素*/
   border: none;
   padding: 0;
