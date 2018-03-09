@@ -1,6 +1,4 @@
-{
-  "data":
-  [
+[
     [{
       "goodsId": 1,
       "goodsImg": "http://7xjyw1.com1.z0.glb.clouddn.com/pos001.jpg",
@@ -206,4 +204,3 @@
       "price": 17
     }]
   ]
-}
