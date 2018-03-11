@@ -1,7 +1,7 @@
 <template>
   <div class="bottom-bar-wrapper">
     <div class="bottom-content">
-      <p>{{msg}}</p>
+      <p>友情链接</p>
     </div>
   </div>
 </template>
@@ -28,13 +28,12 @@ export default {
 <style lang="less">
   .bottom-bar-wrapper {
     height: 60px;
+    background-color: white;
+    margin-top: 10px;
     .bottom-content {
       max-width: 1012px;
       margin-left: auto;
       margin-right: auto;
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-      background-color: #3a8ee6;
       height: 100%;
     }
   }

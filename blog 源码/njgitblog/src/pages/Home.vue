@@ -5,12 +5,11 @@
           <div class="page-content">
             <div class="dash-board">
               <div class="news-content">
-                <div v-for="news in newsList" :key="news.title" class="content-item">
-                  <p>{{news.title}}</p>
-                  <p>{{news.content}}</p>
-                </div>
+                <router-view name="contentlist"></router-view>
               </div>
-              <div class="right-nav"></div>
+              <div class="right-nav">
+                <router-view name="webrightnav"></router-view>
+              </div>
             </div>
           </div>
         </div>
@@ -25,25 +24,7 @@ export default {
   },
   data () {
     return {
-      msg: 'HomeMsg',
-      newsList: [
-        {
-          title: 'title0',
-          content: 'content0'
-        },
-        {
-          title: 'title1',
-          content: 'content1'
-        },
-        {
-          title: 'title2',
-          content: 'content1'
-        },
-        {
-          title: 'title3',
-          content: 'content1'
-        }
-      ]
+      msg: 'HomeMsg'
     }
   },
   mounted: function () {
@@ -55,35 +36,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
   .home-wrapper {
-    background-color: cyan;
     .container-wrapper {
-      background-color: magenta;
       .page-content {
-        background-color: greenyellow;
         padding-top: 20px;
-        width: 980px;
+        width: 1012px;
         margin-right: auto;
         margin-left: auto;
         display: table;
         .dash-board {
-          background-color: blue;
-          margin-left: -10px;
-          margin-right: -10px;
+          /*margin-left: -10px;*/
+          /*margin-right: -10px;*/
           .news-content {
-            background-color: yellow;
             width: 66.666667%;
             float: left;
-            padding-left: 10px;
-            padding-right: 10px;
-            height: 1000px;
+            /*padding-left: 10px;*/
+            /*padding-right: 10px;*/
+            /*height: 1000px;*/
           }
           .right-nav {
-            background-color: purple;
             width: 33.333333%;
             float: left;
-            padding-right: 10px;
-            padding-left: 10px;
-            height: 300px;
+            /*padding-right: 10px;*/
+            /*padding-left: 10px;*/
+            /*height: 300px;*/
           }
         }
       }

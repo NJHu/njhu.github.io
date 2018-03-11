@@ -12,7 +12,7 @@ export default {
 
 <style>
 #app-window {
-  background-color: skyblue;
   min-width: 1020px;
+  background-color: #f6f6f6;
 }
 </style>

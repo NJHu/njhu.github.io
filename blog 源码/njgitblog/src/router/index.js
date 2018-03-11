@@ -22,7 +22,9 @@ const router = new Router({
           path: '/',
           components: {
             topnavigationbar: () => import('../components/TopNavigationBar'),
-            bottombar: () => import('../components/BottomBar')
+            bottombar: () => import('../components/BottomBar'),
+            contentlist: () => import('../pages/HomeContentList'),
+            webrightnav: () => import('../pages/HomeRightNav')
           }
         }
       ]
