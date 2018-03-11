@@ -1,21 +1,20 @@
 <template>
   <div class="home-wrapper">
-    <div class="top-navigation-bar">
-    </div>
-    <div class="container-wrapper">
-      <div class="page-content">
-        <div class="dash-board">
-          <div class="news-content">
-            <div v-for="news in newsList" :key="news.title" class="content-item">
-              <p>{{news.title}}</p>
-              <p>{{news.content}}</p>
+    <router-view name="topnavigationbar"></router-view>
+        <div class="container-wrapper">
+          <div class="page-content">
+            <div class="dash-board">
+              <div class="news-content">
+                <div v-for="news in newsList" :key="news.title" class="content-item">
+                  <p>{{news.title}}</p>
+                  <p>{{news.content}}</p>
+                </div>
+              </div>
+              <div class="right-nav"></div>
             </div>
           </div>
-          <div class="right-nav"></div>
         </div>
-      </div>
-    </div>
-    <div class="footer"></div>
+    <router-view name="bottombar"></router-view>
   </div>
 </template>
 
@@ -57,11 +56,6 @@ export default {
 <style lang="less">
   .home-wrapper {
     background-color: cyan;
-    .top-navigation-bar {
-      height: 56px;
-      position: relative !important;
-      background-color: #24292e;
-    }
     .container-wrapper {
       background-color: magenta;
       .page-content {
@@ -93,15 +87,6 @@ export default {
           }
         }
       }
-    }
-    .footer {
-      max-width: 1012px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 16px !important;
-      padding-right: 16px !important;
-      height: 60px;
-      background-color: #3a8ee6;
     }
   }
 </style>

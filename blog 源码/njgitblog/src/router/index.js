@@ -10,10 +10,21 @@ const router = new Router({
       path: '*',
       component: () => import('../pages/Error')
     },
+    // {
+    //   path: '/',
+    //   redirect: '/home'
+    // },
     {
       path: '/',
       component: () => import('../pages/Home'),
       children: [
+        {
+          path: '/',
+          components: {
+            topnavigationbar: () => import('../components/TopNavigationBar'),
+            bottombar: () => import('../components/BottomBar')
+          }
+        }
       ]
     }
   ]
