@@ -21,6 +21,7 @@ const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
 const config = require('../config')
+// 配置 webpack
 const webpackConfig = require('./webpack.prod.conf')
 config.build.env.NODE_VERSION = '"' + process.env.NODE_VERSION + '"';
 console.log(config.build.env);
@@ -50,7 +51,6 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunks: false,
       chunkModules: false
     }) + '\n\n')
-
     if (stats.hasErrors()) {
       console.log(chalk.red('  Build failed with errors.\n'))
       process.exit(1)

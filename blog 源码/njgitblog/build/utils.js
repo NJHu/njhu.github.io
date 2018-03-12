@@ -19,7 +19,12 @@ exports.assetsPath = function (_path) {
     ? config.build.assetsSubDirectory
     : config.dev.assetsSubDirectory
 
-  return path.posix.join(assetsSubDirectory, _path)
+  let rPath = path.posix.join(assetsSubDirectory, _path);
+
+  // console.log('========')
+  // console.log(rPath)
+
+  return rPath
 }
 
 // 生成css、sass、scss等各种用来编写样式的语言所对应的loader配置
@@ -30,7 +35,8 @@ exports.cssLoaders = function (options) {
     loader: 'css-loader',
     options: {
       //自动处理浏览器兼容性前缀
-      postcss: [autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4'] })],
+      // postcss: [autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4', 'last 5 versions'] })],
+      postcss: [autoprefixer({ browsers: ['last 5 versions'] })],
       // 是否最小化
       minimize: process.env.NODE_ENV === 'production',
       // 是否使用source-map
@@ -38,7 +44,7 @@ exports.cssLoaders = function (options) {
     }
   }
 
-
+  //自动处理浏览器兼容性前缀
   const postcssLoader = {
     loader: 'postcss-loader',
     options: {
@@ -118,12 +124,13 @@ exports.createNotifierCallback = () => {
 
     const error = errors[0]
     const filename = error.file && error.file.split('!').pop()
-
+    console.log('-----------')
+    console.log(path.join(__dirname, 'potamato.png'))
     notifier.notify({
       title: packageConfig.name,
       message: severity + ': ' + error.name,
       subtitle: filename || '',
-      icon: path.join(__dirname, 'logo.png')
+      icon: path.join(__dirname, '../static/img/potamato.png')
     })
   }
 }

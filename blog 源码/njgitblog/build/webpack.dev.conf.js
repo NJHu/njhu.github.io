@@ -12,6 +12,8 @@ const merge = require('webpack-merge')
 // node自带的文件路径工具
 const path = require('path')
 const baseWebpackConfig = require('./webpack.base.conf')
+
+// copy-webpack-plugin就是专门为我们作静态资源转移的插件
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 // html-webpack-plugin用于将webpack编译打包后的文件注入到html模板中
@@ -21,7 +23,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 // friendly-errors-webpack-plugin用于更友好地输出webpack的警告、错误等信息
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
-
+// 端口
 const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
@@ -52,7 +54,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     port: PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
     overlay: config.dev.errorOverlay
-      ? { warnings: false, errors: true }
+      ? { warnings: true, errors: true }
       : false,
     publicPath: config.dev.assetsPublicPath,
     proxy: config.dev.proxyTable,
@@ -70,7 +72,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     // 开启webpack热更新功能
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
+    // HMR shows correct file names in console on update.
+    // 模块热替换,
+    //模块热替换(HMR - Hot Module Replacement)功能会在应用程序运行过程中替换、添加或删除模块，而无需重新加载整个页面。主要是通过以下几种方式，来显著加快开发速度
+    new webpack.NamedModulesPlugin(),
 
     // webpack编译过程中出错的时候跳过报错阶段，不会阻塞编译，在编译结束后报错
     new webpack.NoEmitOnErrorsPlugin(),
@@ -82,7 +87,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     }),
+
     // copy custom static assets
+    // 就是专门为我们作静态资源转移的插件
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),

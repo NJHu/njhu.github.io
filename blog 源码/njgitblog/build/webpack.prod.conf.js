@@ -19,7 +19,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 // 即自动在index.html里面加上<link>和<script>标签引用webpack打包后的文件
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // 在每次构建前清理 /dist 文件夹
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+// const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // 提取css的插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -33,7 +33,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 // Workbox 项目构建了一个离线应用程序
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
-const env = require('../config/prod.env')
+const prodEnv = require('../config/prod.env')
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -60,11 +60,13 @@ const webpackConfig = merge(baseWebpackConfig, {
   // webpack插件
   plugins: [
     // 在每次构建前清理 /dist 文件夹，是比较推荐的做法
-    new CleanWebpackPlugin(['dist']),
+    // new CleanWebpackPlugin(['dist']),
 
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
-      'process.env': env
+      'process.env': prodEnv
+      // 'process.env': require('../config/prod.env')
+      // 'process.env': config.build.env
     }),
 
     // 压缩JS代码

@@ -8,11 +8,14 @@ const utils = require('./utils')
 
 // 配置文件
 const config = require('../config')
+// 解析 vue的 style css-loader
 const vueLoaderConfig = require('./vue-loader.conf')
 
 // 获取绝对路径, dir相对于本文件的路径, return绝对路径
 function resolve(dir) {
   let giveAPath = path.join(__dirname, '..', dir)
+  // console.log('=====================')
+  // console.log(giveAPath)
   return giveAPath
 }
 
@@ -20,10 +23,12 @@ const createLintingRule = () => ({
   test: /\.(js|vue)$/,
   loader: 'eslint-loader',
   enforce: 'pre',
-  include: [resolve('src'), resolve('test')],
+  // 对src和test文件夹下的.js和.vue文件使用eslint-loader进行代码规范检查
+  // include: [resolve('src'), resolve('test')],
+  include: [resolve('src'), resolve('static')],
   options: {
     formatter: require('eslint-friendly-formatter'),
-    emitWarning: !config.dev.showEslintErrorsInOverlay
+    emitWarning: config.dev.showEslintErrorsInOverlay
   }
 })
 
@@ -66,7 +71,7 @@ module.exports = {
         loader: "style-loader!css-loader!less-loader",
       },
       {
-        // 对所有.vue文件使用vue-loader进行编译
+        // 解析 vue 中的 style css
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
@@ -75,7 +80,8 @@ module.exports = {
         // 对src和test文件夹下的.js文件使用babel-loader将es6+的代码转成es5
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        // include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')],
+        include: [resolve('src'), resolve('static'), resolve('node_modules/webpack-dev-server/client')],
       },
       {
         // 对图片资源文件使用url-loader
