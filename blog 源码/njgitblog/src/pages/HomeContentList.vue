@@ -2,7 +2,7 @@
   <div class="home-content-list">
     <h2><a href="https://www.github.com/njhu" target="_blank">我的 github 地址:  https://www.github.com/njhu</a></h2>
     <div>
-      <iframe src="https://github.com/NJHu/iOSProject" frameborder="0"></iframe>
+      <!--<iframe src="https://github.com/NJHu/iOSProject" frameborder="0"></iframe>-->
     </div>
   </div>
 </template>

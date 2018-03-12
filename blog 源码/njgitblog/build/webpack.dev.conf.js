@@ -70,11 +70,9 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     // https://github.com/glenjamin/webpack-hot-middleware#installation--usage
     // 开启webpack热更新功能
     new webpack.HotModuleReplacementPlugin(),
-
     new webpack.NamedModulesPlugin(), // HMR shows correct file names in console on update.
 
     // webpack编译过程中出错的时候跳过报错阶段，不会阻塞编译，在编译结束后报错
-
     new webpack.NoEmitOnErrorsPlugin(),
 
     // https://github.com/ampedandwired/html-webpack-plugin
@@ -85,7 +83,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true
     }),
     // copy custom static assets
-    // webpack错误信息提示插件
     new CopyWebpackPlugin([
       {
         from: path.resolve(__dirname, '../static'),

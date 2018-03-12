@@ -40,6 +40,7 @@ module.exports = {
      */
 
     // https://webpack.js.org/configuration/devtool/#development
+    // 断点调试工具
     devtool: 'cheap-module-eval-source-map',
 
     // If you have problems debugging vue-files in devtools,

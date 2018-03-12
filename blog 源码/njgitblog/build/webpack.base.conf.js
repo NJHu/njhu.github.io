@@ -12,7 +12,8 @@ const vueLoaderConfig = require('./vue-loader.conf')
 
 // 获取绝对路径, dir相对于本文件的路径, return绝对路径
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  let giveAPath = path.join(__dirname, '..', dir)
+  return giveAPath
 }
 
 const createLintingRule = () => ({
@@ -28,7 +29,6 @@ const createLintingRule = () => ({
 
 module.exports = {
   context: path.resolve(__dirname, '../'),
-
   // webpack入口文件
   entry: {
     app: './src/main.js'

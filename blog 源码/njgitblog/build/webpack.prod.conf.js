@@ -18,6 +18,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 // html-webpack-plugin用于将webpack编译打包后的文件注入到html模板中
 // 即自动在index.html里面加上<link>和<script>标签引用webpack打包后的文件
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+// 在每次构建前清理 /dist 文件夹
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 // 提取css的插件
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -27,6 +29,9 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
 // 个uglifyjs-webpack-plugin(JS压缩插件，简称uglify)。
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
+// Workbox 项目构建了一个离线应用程序
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 const env = require('../config/prod.env')
 
@@ -54,6 +59,9 @@ const webpackConfig = merge(baseWebpackConfig, {
 
   // webpack插件
   plugins: [
+    // 在每次构建前清理 /dist 文件夹，是比较推荐的做法
+    new CleanWebpackPlugin(['dist']),
+
     // http://vuejs.github.io/vue-loader/en/workflow/production.html
     new webpack.DefinePlugin({
       'process.env': env
@@ -84,8 +92,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 优化、压缩css代码，可以删除来自不同组件的冗余代码，如果只简单使用extract-text-plugin可能会造成css重复
     new OptimizeCSSPlugin({
       cssProcessorOptions: config.build.productionSourceMap
-        ? { safe: true, map: { inline: false } }
-        : { safe: true }
+        ? {safe: true, map: {inline: false}}
+        : {safe: true}
     }),
     // generate dist index.html with correct asset hash for caching.
     // you can customize output by editing /index.html
@@ -118,7 +126,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 提取公共 js 到独立的文件，将所有从node_modules中引入的js提取到vendor.js，即抽取库文件
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks (module) {
+      minChunks(module) {
         // any required modules inside node_modules are extracted to vendor
         return (
           module.resource &&
@@ -131,6 +139,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // extract webpack runtime and module manifest to its own file in order to
     // prevent vendor hash from being updated whenever app bundle is updated
+    // 将模块清单 提取到独立的文件，以防止当 app包更新时导致公共 js hash也更新
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity
@@ -155,6 +164,12 @@ const webpackConfig = merge(baseWebpackConfig, {
         ignore: ['.*']
       }
     ])
+    // new WorkboxPlugin({
+    //   // 这些选项帮助 ServiceWorkers 快速启用
+    //   // 不允许遗留任何“旧的” ServiceWorkers
+    //   clientsClaim: true,
+    //   skipWaiting: true
+    // })
   ]
 })
 
