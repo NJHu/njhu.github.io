@@ -1,8 +1,8 @@
 {
-  "name": "njgitblog",
+  "name": "JSTudou",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "胡鹏 <64hp@163.com>",
+  "description": "技术土豆的微博",
+  "author": "njhu",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

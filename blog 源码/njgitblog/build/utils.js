@@ -36,7 +36,7 @@ exports.cssLoaders = function (options) {
     options: {
       //自动处理浏览器兼容性前缀
       // postcss: [autoprefixer({ browsers: ['iOS >= 7', 'Android >= 4', 'last 5 versions'] })],
-      postcss: [autoprefixer({ browsers: ['last 5 versions'] })],
+      postcss: [autoprefixer({browsers: ['last 5 versions']})],
       // 是否最小化
       minimize: process.env.NODE_ENV === 'production',
       // 是否使用source-map
@@ -53,7 +53,7 @@ exports.cssLoaders = function (options) {
   }
 
   // 生成各种loader配置，并且配置了extract-text-pulgin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
 
     // 默认是css-loader
     const loaders = options.usePostCSS ? [cssLoader, postcssLoader] : [cssLoader]
@@ -91,7 +91,7 @@ exports.cssLoaders = function (options) {
     css: generateLoaders(),
     postcss: generateLoaders(),
     less: generateLoaders('less'),
-    sass: generateLoaders('sass', { indentedSyntax: true }),
+    sass: generateLoaders('sass', {indentedSyntax: true}),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
