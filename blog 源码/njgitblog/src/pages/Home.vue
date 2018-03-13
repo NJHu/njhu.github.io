@@ -1,36 +1,36 @@
 <template>
   <div class="home-wrapper">
     <router-view name="topnavigationbar"></router-view>
-        <div class="container-wrapper">
-          <div class="page-content">
-            <div class="dash-board">
-              <div class="news-content">
-                <router-view name="contentlist"></router-view>
-              </div>
-              <div class="right-nav">
-                <router-view name="webrightnav"></router-view>
-              </div>
-            </div>
+    <div class="container-wrapper">
+      <div class="page-content">
+        <div class="dash-board">
+          <div class="news-content">
+            <router-view name="contentlist"></router-view>
+          </div>
+          <div class="right-nav">
+            <router-view name="webrightnav"></router-view>
           </div>
         </div>
+      </div>
+    </div>
     <router-view name="bottombar"></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'home',
-  components: {
-  },
-  data () {
-    return {
-      msg: 'HomeMsg'
+  export default {
+    name: 'home',
+    components: {},
+    data() {
+      return {
+        msg: 'HomeMsg'
+      }
+    },
+    mounted: function () {
+    },
+    methods: {
     }
-  },
-  mounted: function () {
-  },
-  methods: {}
-}
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

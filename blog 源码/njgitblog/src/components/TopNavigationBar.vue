@@ -13,33 +13,33 @@
 </template>
 
 <script>
-export default {
-  name: 'topnavigationbar',
-  data () {
-    return {
-      msg: 'topnavigationbar',
-      tudouNavList: [
-        {title: '首页', path: '/'},
-        {title: '前端日记', path: '/'},
-        {title: '生活趣事', path: '/'},
-        {title: '自我介绍', path: '/'}
-      ]
-    }
-  },
-  mounted: function () {
-    console.log(this.$route)
-    console.log(this.$route.query)
-    console.log(this.$router)
-  },
-  methods: {
-    iconClick () {
-      this.$router.replace({path: '/', query: {}})
+  export default {
+    name: 'topnavigationbar',
+    data() {
+      return {
+        msg: 'topnavigationbar',
+        tudouNavList: [
+          {title: '首页', path: '/'},
+          {title: '前端日记', path: '/'},
+          {title: '生活趣事', path: '/'},
+          {title: '自我介绍', path: '/'}
+        ]
+      }
     },
-    navtoNextPage: function (pageItem) {
-      console.log(pageItem)
+    mounted: function () {
+      console.log(this.$route)
+      console.log(this.$route.query)
+      console.log(this.$router)
+    },
+    methods: {
+      iconClick() {
+        this.$router.replace({path: '/', query: {}})
+      },
+      navtoNextPage: function (pageItem) {
+        console.log(pageItem)
+      }
     }
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -96,7 +96,9 @@ export default {
           a {
             color: #666;
           }
-          a:hover   {color:#8AC78F;}
+          a:hover {
+            color: #8AC78F;
+          }
         }
       }
     }

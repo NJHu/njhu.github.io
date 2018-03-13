@@ -5,7 +5,7 @@ require('./check-versions')()
 
 // 设置当前环境为生产环境
 process.env.NODE_ENV = 'production'
-process.env.NODE_VERSION = process.env.npm_package_config_version || ''
+process.env.NODE_VERSION = process.env.npm_package_config_version || process.version
 console.log('版本号:' + process.env.NODE_VERSION);
 
 // ora，一个可以在终端显示spinner的插件

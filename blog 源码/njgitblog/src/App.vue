@@ -5,14 +5,14 @@
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style>
-#app-window {
-  min-width: 1020px;
-  background-color: #f6f6f6;
-}
+  #app-window {
+    min-width: 1020px;
+    background-color: #f6f6f6;
+  }
 </style>

@@ -2,7 +2,7 @@
   <div class="home-right-nav">
     <div class="nav-section">
       <div class="title">
-          <h3>网站公告</h3>
+        <h3>网站公告</h3>
       </div>
     </div>
     <div class="nav-section">
@@ -24,21 +24,20 @@
 </template>
 
 <script>
-export default {
-  name: 'homerightnav',
-  data () {
-    return {
-      msg: '404!'
-    }
-  },
-  mounted: function () {
-    console.log(this.$route)
-    console.log(this.$route.query)
-    console.log(this.$router)
-  },
-  methods: {
+  export default {
+    name: 'homerightnav',
+    data() {
+      return {
+        msg: '404!'
+      }
+    },
+    mounted: function () {
+      console.log(this.$route)
+      console.log(this.$route.query)
+      console.log(this.$router)
+    },
+    methods: {}
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -54,13 +53,13 @@ export default {
       border: 1px solid #eaeaea;
       overflow: hidden;
       .title {
-          h3 {
-            background-color: #fbfbfb;
-            border-bottom: 1px solid #eaeaea;
-            color: #666;
-            font-size: 18px;
-            padding: 11px 15px 10px;
-          }
+        h3 {
+          background-color: #fbfbfb;
+          border-bottom: 1px solid #eaeaea;
+          color: #666;
+          font-size: 18px;
+          padding: 11px 15px 10px;
+        }
       }
     }
   }

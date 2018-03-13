@@ -8,21 +8,20 @@
 </template>
 
 <script>
-export default {
-  name: 'homecontentlist',
-  data () {
-    return {
-      msg: 'homecontentlist!'
-    }
-  },
-  mounted: function () {
-    console.log(this.$route)
-    console.log(this.$route.query)
-    console.log(this.$router)
-  },
-  methods: {
+  export default {
+    name: 'homecontentlist',
+    data() {
+      return {
+        msg: 'homecontentlist!'
+      }
+    },
+    mounted: function () {
+      console.log(this.$route)
+      console.log(this.$route.query)
+      console.log(this.$router)
+    },
+    methods: {}
   }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
