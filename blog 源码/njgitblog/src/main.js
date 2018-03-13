@@ -5,10 +5,9 @@ import App from './App'
 import router from './router'
 
 // Element是一套为开发者、设计师和产品经理准备的基于Vue2.0的组件库
-import 'element-ui/lib/theme-chalk/index.css'
-import ElementUI from 'element-ui'
-
-Vue.use(ElementUI)
+// import 'element-ui/lib/theme-chalk/index.css'
+// import ElementUI from 'element-ui'
+// Vue.use(ElementUI)
 
 Vue.config.productionTip = false
 
