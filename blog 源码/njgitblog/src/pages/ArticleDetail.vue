@@ -1,7 +1,7 @@
 <template>
   <div class="article-detail-wrapper">
       <div id="mark-down-content">
-        {{msg}}
+        <!--{{msg}}-->
       </div>
   </div>
 </template>
@@ -17,18 +17,26 @@
       }
     },
     created() {
-      axios.get('https://raw.githubusercontent.com/NJHu/iOSProject/master/README.md')
-        .then(response => {
-          console.log(response.data)
-          document.getElementById('mark-down-content').innerHTML =
-            marked(response.data)
-        })
-        .catch(error => {
-          console.log(error)
-          alert('网络错误，不能访问, 跨域访问, 浏览器需要设置')
-        })
+      let mdFileUrl = this.$route.query.mdFileUrl
+      console.log('==============')
+      console.log(mdFileUrl)
+      if (mdFileUrl) {
+        axios.get(mdFileUrl)
+          .then(response => {
+            console.log(response.data)
+            document.getElementById('mark-down-content').innerHTML =
+              marked(response.data)
+          })
+          .catch(error => {
+            console.log(error)
+            alert('网络错误，不能访问, 跨域访问, 浏览器需要设置')
+          })
+      }
     },
     mounted: function () {
+      let mdFileUrl = this.$route.query.article.mdFileUrl
+      console.log('==============')
+      console.log(mdFileUrl)
       console.log(this.$route)
       console.log(this.$route.query)
       console.log(this.$router)

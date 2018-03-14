@@ -1,26 +1,32 @@
 <template>
   <div class="home-content-list-wrapper">
-    <div>
-      <router-link to="/articledetail" target="_blank">去到page01</router-link>
+    <div v-if="articleList">
+      <article-cell v-for="articleItem in articleList" :key="articleItem.title" :article="articleItem"></article-cell>
     </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import articleCell from '../components/ArticleCell'
+
   export default {
     name: 'homecontentlist',
     data() {
       return {
-        msg: 'homecontentlist!'
+        msg: 'homecontentlist!',
+        articleList: undefined
       }
     },
-    created () {
-      axios.get('https://raw.githubusercontent.com/NJHu/iOSProject/master/README.md')
+    components: {
+      'article-cell': articleCell
+    },
+    created() {
+      let vm = this
+      axios.get('https://raw.githubusercontent.com/NJHu/njhu.github.io/master/files/articleList.json')
         .then(response => {
           console.log(response.data)
-          document.getElementById('mark-down-content').innerHTML =
-            marked(response.data)
+          vm.articleList = response.data
         })
         .catch(error => {
           console.log(error)
@@ -43,8 +49,10 @@
     border: 1px solid #eaeaea;
     border-radius: 4px;
     margin-bottom: 15px;
-    height: 1000px;
+    min-height: 900px;
     background-color: white;
+    overflow-x: hidden;
+    overflow-y: auto;
     h2 {
       padding: 20px;
       font-size: 20px;
