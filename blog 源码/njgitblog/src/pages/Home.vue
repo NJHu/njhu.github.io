@@ -6,6 +6,7 @@
         <div class="dash-board">
           <div class="news-content">
             <router-view name="contentlist"></router-view>
+            <router-view name="articledetail"></router-view>
           </div>
           <div class="right-nav">
             <router-view name="webrightnav"></router-view>

@@ -23,11 +23,26 @@ const router = new Router({
           components: {
             topnavigationbar: () => import('../components/TopNavigationBar'),
             bottombar: () => import('../components/BottomBar'),
-            contentlist: () => import('../pages/HomeContentList'),
-            webrightnav: () => import('../pages/HomeRightNav')
+            webrightnav: () => import('../pages/HomeRightNav'),
+            contentlist: () => import('../pages/HomeContentList')
           }
         }
       ]
+    },
+    {
+      path: '/articledetail',
+      component: () => import('../pages/Home'),
+      children: [
+        {
+          path: '/',
+          components: {
+            topnavigationbar: () => import('../components/TopNavigationBar'),
+            bottombar: () => import('../components/BottomBar'),
+            webrightnav: () => import('../pages/HomeRightNav'),
+            articledetail: () => import('../pages/ArticleDetail')
+          }
+        }
+        ]
     }
   ]
 })

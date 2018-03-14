@@ -3,10 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import {GET} from './assets/js/request'
 
 // Element是一套为开发者、设计师和产品经理准备的基于Vue2.0的组件库
 import 'element-ui/lib/theme-chalk/index.css'
 import ElementUI from 'element-ui'
+
 Vue.use(ElementUI)
 
 Vue.config.productionTip = false
@@ -31,3 +33,18 @@ new Vue({
 //     })
 //   })
 // }
+
+Vue.prototype.GET = function (url, data, success, failure, showLoading) {
+  if (showLoading === undefined) {
+    // showLoading = true;
+  }
+  if (showLoading) {
+    // vue.showLoading();
+  }
+
+  GET(url, function (response) {
+    success(response)
+  }, function (error) {
+    failure(error)
+  })
+}

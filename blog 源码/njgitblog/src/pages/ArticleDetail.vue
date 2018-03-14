@@ -1,21 +1,22 @@
 <template>
-  <div class="home-content-list-wrapper">
-    <div>
-      <router-link to="/articledetail" target="_blank">去到page01</router-link>
-    </div>
+  <div class="article-detail-wrapper">
+      <div id="mark-down-content">
+        {{msg}}
+      </div>
   </div>
 </template>
 
 <script>
   import axios from 'axios'
+  import marked from 'marked'
   export default {
-    name: 'homecontentlist',
+    name: 'articeldetail',
     data() {
       return {
-        msg: 'homecontentlist!'
+        msg: 'articeldetail!'
       }
     },
-    created () {
+    created() {
       axios.get('https://raw.githubusercontent.com/NJHu/iOSProject/master/README.md')
         .then(response => {
           console.log(response.data)
@@ -39,11 +40,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-  .home-content-list-wrapper {
+  .article-detail-wrapper {
     border: 1px solid #eaeaea;
     border-radius: 4px;
     margin-bottom: 15px;
-    height: 1000px;
     background-color: white;
     h2 {
       padding: 20px;
