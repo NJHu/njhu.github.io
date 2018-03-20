@@ -1,6 +1,6 @@
 <template>
   <div class="article-detail-wrapper">
-      <div id="mark-down-content" v-html="htmlContent">
+      <div id="mark-down-content">
       </div>
   </div>
 </template>
@@ -12,12 +12,10 @@
     name: 'articeldetail',
     data() {
       return {
-        msg: 'articeldetail!',
-        htmlContent: ''
+        msg: 'articeldetail!'
       }
     },
     created() {
-      let vm = this
       let mdFileUrl = this.$route.query.mdFileUrl
       console.log('==============')
       console.log(mdFileUrl)
@@ -27,8 +25,8 @@
             console.log(response.data)
 //            document.getElementById('mark-down-content').innerHTML =
 //              marked(response.data)
+      document.getElementById('mark-down-content').innerHTML = response.data
             console.log(marked)
-            vm.htmlContent = response.data
           })
           .catch(error => {
             console.log(error)
