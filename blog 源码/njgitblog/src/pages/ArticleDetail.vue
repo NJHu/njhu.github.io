@@ -1,7 +1,6 @@
 <template>
   <div class="article-detail-wrapper">
-      <div id="mark-down-content">
-        <!--{{msg}}-->
+      <div id="mark-down-content" v-html="htmlContent">
       </div>
   </div>
 </template>
@@ -13,10 +12,12 @@
     name: 'articeldetail',
     data() {
       return {
-        msg: 'articeldetail!'
+        msg: 'articeldetail!',
+        htmlContent: ''
       }
     },
     created() {
+      let vm = this
       let mdFileUrl = this.$route.query.mdFileUrl
       console.log('==============')
       console.log(mdFileUrl)
@@ -24,8 +25,10 @@
         axios.get(mdFileUrl)
           .then(response => {
             console.log(response.data)
-            document.getElementById('mark-down-content').innerHTML =
-              marked(response.data)
+//            document.getElementById('mark-down-content').innerHTML =
+//              marked(response.data)
+            console.log(marked)
+            vm.htmlContent = response.data
           })
           .catch(error => {
             console.log(error)
@@ -56,6 +59,20 @@
     h2 {
       padding: 20px;
       font-size: 20px;
+    }
+    ul {
+      display: block;
+      list-style-type: disc;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      -webkit-padding-start: 40px;
+      li {
+        list-style-type: disc;
+        display: list-item;
+        text-align: -webkit-match-parent;
+      }
     }
   }
 </style>
