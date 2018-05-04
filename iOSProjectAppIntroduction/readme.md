@@ -13,7 +13,7 @@
 </h2>
     
 <h2>自动跳转带参数
-    <a href="https://njhu.github.io/iOSProject/index.html?a=1">"https://njhu.github.io/iOSProject/index.html?a=1</a><br>
+    <a href="https://njhu.github.io/iOSProject/index.html?a=1">https://njhu.github.io/iOSProject/index.html?a=1</a><br>
 </h2>
 
 <h2>自动跳转无参数
