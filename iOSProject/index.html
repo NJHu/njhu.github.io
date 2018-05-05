@@ -1,17 +1,112 @@
 <html>
 <head>
 	<title>我是下载页面</title>
+	<style type="text/css">
+	a {
+		font-size: 17px;
+	}
+	</style>
+	<script>
+	    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+	    var flag = true;
+
+	    /**
+	     * 初始化加载程序
+	     */
+	    window.onload = function(){
+	        console.log(isMobile());
+	        console.log(isWechat());
+	        console.log(getOsVersion());
+	    }
+
+	    /**
+	     * 判断是不是移动端
+	     * @returns {boolean}
+	     */
+	    function isMobile() {
+	        var userAgentInfo = navigator.userAgent;
+	        for (var v = 0; v < Agents.length; v++) {
+	            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+	                flag = false;
+	                break;
+	            }
+	        }
+	        return flag;
+	    }
+
+	    /**
+	     * 判断是不是微信浏览器
+	     * @returns {boolean}
+	     */
+	    function isWechat() {
+	        var ua = navigator.userAgent.toLowerCase();
+
+	        if(ua.match(/MicroMessenger/i)=="micromessenger"){
+	            return true;
+	        }
+	        else{
+	            return false;
+	        }
+	    }
+
+	    /**
+	     * 判断浏览器所在机器操作系统版本
+	     */
+	    function getOsVersion(){
+	        var u = navigator.userAgent,version = '';
+	        if (u.indexOf('Mac OS X') > -1) {
+	            //ios
+	            var regStr_saf = /OS [\d._]*/gi;
+	            var verinfo = u.match(regStr_saf);
+	            version ="ios" + (verinfo + "").replace(/[^0-9|_.]/ig,'').replace(/_/ig,'.');
+	        } else if (u.indexOf('Android') > -1
+	            || u.indexOf('Linux') > -1) {
+	            //android
+	            version ="android" + u.substr(u.indexOf('Android') + 8, u.indexOf(";", u.indexOf("Android")) - u.indexOf('Android') - 8);
+	        } else if (u.indexOf('BB10') > -1) {
+	            //黑莓bb10系统
+	            version ="黑莓bb10系统" +  u.substr(u.indexOf('BB10') + 5, u.indexOf(";", u.indexOf("BB10")) - u.indexOf('BB10') - 5);
+	        } else if (u.indexOf('IEMobile')) {
+	            //windows phone
+	            version ="windows phone";
+	        }
+	        return version;
+	    }
+	</script>
 </head>
 <body>
 
-<h1>已经下载, 右上角在网页 Safari 中打开</h1>
+<h1>已经下载, 右上角在网页 浏览器 中打开</h1>
 <hr>
+<h1> 打开 AppStore</h1>
+<!-- http://itunes.apple.com/us/app/id399608199 别人的 --> 
+<!-- http://itunes.apple.com/us/app/id1247333544 美美金融 -->
+<a id="weixinA" href="http://mp.weixin.qq.com/mp/redirect?url=http%3a%2f%2fitunes.apple.com%2fus%2fapp%2fid1247333544">download微信跳转</a>
+
+<a id="liulanqiA" href="http://itunes.apple.com/us/app/id1247333544">download浏览器跳转</a>
+
 <hr>
-<hr>
-<hr>
-<hr>
-<hr>
-<h1>没有下载<a href="https://github.com/NJHu/iOSProject">https://github.com/NJHu/iOSProject</a></h1>
+<h1>没有下载, 去看源码</h1>
+<a href="https://github.com/NJHu/iOSProject">https://github.com/NJHu/iOSProject</a>
 
 </body>
+<script type="text/javascript">
+	function hide_A () {
+			if (isWechat()) {
+				var version = getOsVersion();
+				if (version.match(/ios/i) == "ios") {
+					document.getElementById('weixinA').hidden = false;
+					document.getElementById('liulanqiA').hidden = true;
+				}
+				return false;
+			}
+			document.getElementById('weixinA').hidden = true;
+			document.getElementById('liulanqiA').hidden = false;
+		}
+	setTimeout("hide_A()", 0);
+</script>
 </html>
+
+
+
+
