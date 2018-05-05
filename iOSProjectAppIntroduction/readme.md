@@ -1,21 +1,22 @@
-<h1>您已经下载, 打开 App</h1>
-    
-<div style="font-size: 30px">自动跳转带参数
-    <a href="https://njhu.github.io/iOSProject/index.html?a=1">https://njhu.github.io/iOSProject/index.html?a=1</a><br>
-</div>
 
-<div style="font-size: 30px">自动跳转无参数
-    <a href="https://njhu.github.io/iOSProject">https://njhu.github.io/iOSProject</a><br>
-</div>
+<h1>测试通用链接跳转 App </h1>
+
+<h2>自动跳转带参数
+</h2>
+<a href="https://njhu.github.io/iOSProject/index.html?a=1">https://njhu.github.io/iOSProject/index.html?a=1</a><br>
+
+<h2>自动跳转无参数
+</h2>
+<a href="https://njhu.github.io/iOSProject">https://njhu.github.io/iOSProject</a><br>
         
-<div style="font-size: 30px">自动跳转无参数
-    <a href="https://njhu.github.io/iOSProject/">https://njhu.github.io/iOSProject/</a><br>
-</div>
+<h2>自动跳转无参数
+</h2>
+<a href="https://njhu.github.io/iOSProject/">https://njhu.github.io/iOSProject/</a><br>
     
-<div style="font-size: 30px">自动跳转无参数
-    <a href="https://njhu.github.io/iOSProject/index.html">https://njhu.github.io/iOSProject/index.html</a><br>
-</div>
-
+<h2>自动跳转无参数
+</h2>
+<a href="https://njhu.github.io/iOSProject/index.html">https://njhu.github.io/iOSProject/index.html</a><br>
+<br><br>
 
 title: 突破微信跳转限制－Universal Links那些坑
 date: 2016-01-10 21:43:29
