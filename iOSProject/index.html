@@ -5,6 +5,24 @@
 	a {
 		font-size: 17px;
 	}
+	#liulanqiOpen {
+		text-align: center;
+	}
+	#liulanqiOpen h1 {
+		color: red;
+	}
+	#tishiDownload {
+		margin-top: 100px;
+		text-align: center;
+	}
+	#tishiDownload h1{
+		color: red;
+	}
+	#tishiDownload h2 a {
+		font-size: 30px;
+		margin-left: auto;
+		margin-right: auto;
+	}
 	</style>
 	<script>
 	    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
@@ -79,7 +97,7 @@
 <div id="liulanqiOpen">
 <h1>已经安装</h1>
 <h2>请点右上角在网页 <b>浏览器</b> 中打开</h2>
-<h2>说明: 在浏览器中打开, 如果安装了 App, 不会打开浏览器, 直接打开 App</h2>
+<h2>说明: 在浏览器中打开, 如果安装了 App, 不会打开浏览器, 会直接打开 App</h2>
 </div>
 
 <div id="tishiDownload">
@@ -93,12 +111,12 @@
 <!-- <h1> 没有下载 打开 AppStore</h1> -->
 <!-- http://itunes.apple.com/us/app/id1247333544 美美金融 -->
 <!-- <a id="weixinA" href="http://itunes.apple.com/us/app/id1247333544">download微信跳转</a> -->
-
-<hr>
-<hr>
-<hr>
-<h1>去看源码</h1>
-<a href="https://github.com/NJHu/iOSProject">https://github.com/NJHu/iOSProject</a>
+<br>
+<br>
+<div style="text-align: center">
+	<h1>去看源码</h1>
+	<a href="https://github.com/NJHu/iOSProject">https://github.com/NJHu/iOSProject</a>
+</div>
 
 </body>
 <script type="text/javascript">
@@ -115,7 +133,7 @@
 			}else {
 				document.getElementById('liulanqiOpen').hidden = true;
 				document.getElementById('tishiDownload').hidden = false;
-				window.location.href = "http://itunes.apple.com/us/app/id1247333544";
+				// window.location.href = "http://itunes.apple.com/us/app/id1247333544";
 			}
 		}
 	setTimeout("download()", 0);
