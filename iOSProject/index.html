@@ -76,34 +76,38 @@
 </head>
 <body>
 
-<h1>已经下载, 右上角在网页 浏览器 中打开</h1>
+<h1>右上角在网页 浏览器 中打开</h1>
+<h1>说明: 在浏览器中打开, 如果安装了 App, 不会打开浏览器, 直接打开 App</h1>
+<h1>说明: 在浏览器中打开, 如果没有安装了 App, 打开浏览器后自动跳转AppStore</h1>
 <hr>
-<h1> 没有下载 打开 AppStore</h1>
-<!-- http://itunes.apple.com/us/app/id399608199 别人的 --> 
+<!-- <h1> 没有下载 打开 AppStore</h1> -->
 <!-- http://itunes.apple.com/us/app/id1247333544 美美金融 -->
-<a id="weixinA" href="http://mp.weixin.qq.com/mp/redirect?url=https%3a%2f%2fitunes.apple.com%2fcn%2fapp%2fid1247333544%23rd">download微信跳转</a>
-
-<a id="liulanqiA" href="http://itunes.apple.com/us/app/id1247333544">download浏览器跳转</a>
+<!-- <a id="weixinA" href="http://itunes.apple.com/us/app/id1247333544">download微信跳转</a> -->
 
 <hr>
-<h1>没有下载, 去看源码</h1>
+<hr>
+<hr>
+<h1>去看源码</h1>
 <a href="https://github.com/NJHu/iOSProject">https://github.com/NJHu/iOSProject</a>
 
 </body>
 <script type="text/javascript">
-	function hide_A () {
+	function downLoad () {
 			if (isWechat()) {
-				var version = getOsVersion();
-				if (version.match(/ios/i) == "ios") {
-					document.getElementById('weixinA').hidden = false;
-					document.getElementById('liulanqiA').hidden = true;
-				}
+				// var version = getOsVersion();
+				// if (version.match(/ios/i) == "ios") {
+					// document.getElementById('weixinA').hidden = false;
+					// document.getElementById('liulanqiA').hidden = true;
+				// }
 				return false;
+			}else {
+				window.location.href = "http://itunes.apple.com/us/app/id1247333544";
 			}
-			document.getElementById('weixinA').hidden = true;
-			document.getElementById('liulanqiA').hidden = false;
+			// document.getElementById('weixinA').hidden = true;
+			// document.getElementById('liulanqiA').hidden = false;
+			// window.location.href = "http://itunes.apple.com/us/app/id1247333544";
 		}
-	setTimeout("hide_A()", 0);
+	setTimeout("downLoad()", 0);
 </script>
 </html>
 
