@@ -9,6 +9,10 @@
 			{
 			"appID": "8F4KQJUEG2.com.jinpengzaixian.njhu",
 			"paths": ["/iOSProject/*"]
+			},
+			{
+			"appID": "44HDC9YG72.github.com.njhu.iosproject",
+			"paths": ["/iOSProject/*"]
 			}
 		]
 	}
