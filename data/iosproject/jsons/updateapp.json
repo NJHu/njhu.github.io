@@ -2,5 +2,6 @@
 	"lastest": 100,
 	"lastestUrl": "https://github.com/njhu/iosproject",
 	"isForce": 0,
-	"minSupport": 100
+	"minSupport": 100,
+	"suggestion": "有新版本发布啦!!"
 }
