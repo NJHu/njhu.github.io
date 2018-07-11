@@ -17,15 +17,18 @@
     },
     created() {
       let mdFileUrl = this.$route.query.mdFileUrl
+      let isMd = this.$route.query.isMd
       console.log('==============')
       console.log(mdFileUrl)
       if (mdFileUrl) {
         axios.get(mdFileUrl)
           .then(response => {
             console.log(response.data)
-//            document.getElementById('mark-down-content').innerHTML =
-//              marked(response.data)
-      document.getElementById('mark-down-content').innerHTML = response.data
+            if (isMd) {
+              document.getElementById('mark-down-content').innerHTML = marked(response.data)
+            } else {
+              document.getElementById('mark-down-content').innerHTML = response.data
+            }
             console.log(marked)
           })
           .catch(error => {

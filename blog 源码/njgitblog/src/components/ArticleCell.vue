@@ -7,7 +7,7 @@
     <div class="sub-content">
       <header>
         <h2>
-          <router-link class="h2-title" :to="{path: '/articledetail', query: {mdFileUrl: article.mdFileUrl}}" target="_blank"
+          <router-link class="h2-title" :to="{path: '/articledetail', query: {mdFileUrl: article.mdFileUrl, isMd: article.isMd}}" target="_blank"
                        :title="article.title">
             {{article.title}}
           </router-link>
