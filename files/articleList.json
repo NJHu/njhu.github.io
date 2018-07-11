@@ -6,5 +6,14 @@
     "subTitle": "oc综合项目,ios综合项目,iosdemo,ocdemo,demo,iosproject,百思不得姐,新浪微博,sina,QQ音乐,QQMusic,music,视频列表,滚动播放,拖拽播放,离线下载,即时通讯,打印 ios 日志,省市区三级联动,没有导航栏,自定义导航栏,字体适配屏幕,空白页展示,空白页,导航条颜色渐变,导航条高度渐变,YYText 使用,列表的展开和收起,京东首页布局,流…",
     "sourceUrl": "https://github.com/njhu/iOSProject",
     "mdFileUrl": "https://raw.githubusercontent.com/NJHu/iOSProject/master/README.md"
+  },
+    {
+    "title": "SwiftProject 组件化工程项目",
+    "image": "https://raw.githubusercontent.com/NJHu/swiftProject/images/mediator.png",
+    "time": "2018-7-11",
+    "subTitle": "
+A modular swift project. Component-based. Modules-based.组件化,swift组件化,swift模块化,iOS组件化,MVVM,模块化,组件化,组件开发,模块,模块开发,直播,直播开源,斗鱼,douyu…",
+    "sourceUrl": "https://github.com/NJHu/swiftProject",
+    "mdFileUrl": "https://github.com/NJHu/swiftProject/master/README.md"
   }
 ]
