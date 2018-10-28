@@ -1,0 +1,28 @@
+{
+	"error": 0,
+	"errorMsg": "",
+	"title": "科目",
+	"currentPageUrl": "",
+	"data": [
+		{
+			"fileName": "数学", 
+			"fileType": "folder",
+			"videoLength": "0",
+			"videoTime": "2018-10-27 18:00",
+			"author": "包老师",
+			"videoPic": "",
+			"videoUrl": "",
+			"introduction": ""
+		},
+				{
+			"fileName": "语文", 
+			"fileType": "folder",
+			"videoLength": "0",
+			"videoTime": "2018-10-27 18:00",
+			"author": "包老师",
+			"videoPic": "",
+			"videoUrl": "",
+			"introduction": ""
+		}
+	]
+}
