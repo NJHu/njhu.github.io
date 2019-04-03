@@ -1,0 +1,11 @@
+
+
+{
+    "errorCode": 0,
+    "errorMsg": "xxx",
+    "isOpen": 1,
+    "noAuthTip": "请获取授权",
+    "users": {
+        "nickName": "outDate"
+    }
+}
