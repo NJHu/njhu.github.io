@@ -6,6 +6,8 @@
     "isOpen": 1,
     "noAuthTip": "请获取授权",
     "outDateTip": "授权已过期",
+    "getInfoUrl": "https://www.douyu.com/lapi/member/api/getInfo",
+    "getUserDetailUrl": "https://www.douyu.com/member/cp/cp_rpc_ajax",
     "users": {
         "酱油妹子快跑ali": "2019.4.31"
     }
