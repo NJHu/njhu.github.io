@@ -5,6 +5,7 @@
     "errorMsg": "xxx",
     "isOpen": 1,
     "noAuthTip": "请获取授权",
+    "outDateTip": "授权已过期",
     "users": {
         "nickName": "outDate"
     }
