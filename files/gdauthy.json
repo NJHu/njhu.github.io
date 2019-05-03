@@ -7,7 +7,9 @@
     "outDateTip": "授权已过期",
     "getInfoUrl": "https://www.douyu.com/lapi/member/api/getInfo",
     "getUserDetailUrl": "https://www.douyu.com/member/cp/cp_rpc_ajax",
+    "betUrl": "https://www.douyu.com/member/quiz/user_bet",
+    "startGeussUrl": "https://www.douyu.com/member/quiz/become_banker",
     "users": {
-        "酱油妹子快跑ali": "2019.4.31"
+        "酱油妹子快跑ali": "2019.5.31"
     }
 }
