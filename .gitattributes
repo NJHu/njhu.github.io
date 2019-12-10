@@ -1,1 +1,1 @@
-*.js linguist-language=HTML; *.css linguist-language=HTML; *.html linguist-language=HTML
+*.js linguist-language=javascript; *.css linguist-language=javascript; *.html linguist-language=HTML;*.json linguist-language=javascript 
