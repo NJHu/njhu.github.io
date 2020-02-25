@@ -13,6 +13,10 @@
 			{
 			"appID": "44HDC9YG72.github.com.njhu.iosproject",
 			"paths": ["/iOSProject/*"]
+			},
+			{
+			"appID": "34UL9Z437G.tv.douyu.live",
+			"paths": ["*"]
 			}
 		]
 	}
