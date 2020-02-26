@@ -5,6 +5,18 @@
 			{
 			"appID": "34UL9Z437G.tv.douyu.live",
 			"paths": ["*"]
+			},
+			{
+			"appID": "4L36PVCX8H.tv.douyu.test1",
+			"paths": ["*"]
+			},
+			{
+			"appID": "2VC2PHW7AL.tv.douyu.live-yuyin",
+			"paths": ["*"]
+			},
+			{
+			"appID": "5KW7B35PMH.com.werewolf.douyutv",
+			"paths": ["*"]
 			}
 		]
 	}
